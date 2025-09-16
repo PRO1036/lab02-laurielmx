@@ -91,14 +91,19 @@ Les deux graphiques montrent surtout une grande concentration de points près de
 Recréez la visualisation:
 
 ```{r recreate-viz}
-ggplot(plastic_waste, aes(x = coastal_pop / total_pop, 
-                          y = plastic_waste_per_cap, 
-                          color = continent)) +
+plastic_waste_coastal <- plastic_waste %>% 
+  mutate(coastal_pop_prop = coastal_pop / total_pop) %>% 
+  filter(plastic_waste_per_cap < 3)
+
+ggplot(plastic_waste_coastal, aes(x = coastal_pop_prop, 
+                                  y = plastic_waste_per_cap, 
+                                  color = continent)) +
   geom_point() +
   geom_smooth(method = "loess", se = TRUE, color = "black") +
   labs(title = "Quantité de déchets plastiques vs Proportion de la population côtière",
        subtitle = "Selon le continent",
        x = "Proportion de la population côtière (Coastal / total population)",
-       y = "Nombre de déchets plastiques par habitant", color = "Continent")
+       y = "Nombre de déchets plastiques par habitant", color = "Continent") +
   theme_minimal()
 ```
+On observe une tendance légèrement positive : plus la proportion de population vivant près des côtes augmente, plus la production de déchets plastiques par habitant tend à croître. La relation reste faible et très variable selon les continents. 
