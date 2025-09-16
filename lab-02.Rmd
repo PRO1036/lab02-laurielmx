@@ -65,20 +65,23 @@ Un boxplot résume les données avec la médiane, les quartiles et les valeurs e
 
 
 ```{r plastic-waste-mismanaged}
-# insert code here
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap,  y = mismanaged_plastic_waste_per_cap, color = continent)) + 
+  geom_point()
 ```
 
-Réponse à la question...
+On observe une relation positive : plus la quantité de déchets plastiques par habitant augmente, plus la quantité de déchets mal gérés tend aussi à augmenter. La tendance varie selon le continent, l’Asie et l’Amérique du Sud ayant davantage de déchets non gérés, tandis que l’Europe et l’Amérique du Nord restent plus bas même avec une production moyenne.
 
 ### Exercise 5
 
 
 ```{r plastic-waste-population-total}
-# insert code here
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap,  y = total_pop, )) + 
+  geom_point()
 ```
 
 ```{r plastic-waste-population-coastal}
-# insert code here
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap,  y = coastal_pop, )) + 
+  geom_point()
 ```
 
 Réponse à la question...
