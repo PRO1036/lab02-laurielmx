@@ -84,7 +84,7 @@ ggplot(plastic_waste, aes(x = plastic_waste_per_cap,  y = coastal_pop, )) +
   geom_point()
 ```
 
-Réponse à la question...
+Les deux graphiques montrent surtout une grande concentration de points près de zéro, avec quelques valeurs extrêmes qui dominent l’échelle. Visuellement, il n’y a pas de tendance claire ni de différence notable entre la population totale et la population côtière par rapport aux déchets plastiques par habitant.
 
 ## Conclusion
 
