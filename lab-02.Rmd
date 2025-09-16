@@ -37,26 +37,29 @@ ggplot(plastic_waste, aes(x = plastic_waste_per_cap )) +
 
 ```{r plastic-waste-density}
 ggplot(plastic_waste, aes(x = plastic_waste_per_cap, color = continent, fill = continent )) + 
-  geom_density()
+  geom_density(alpha = 0.3)
 ```
 
-Réponse à la question...
+La couleur (color et fill) change selon une variable, ici le continent, c’est pourquoi elle se trouve dans aes(). La transparence (alpha) est plutôt une valeur esthétique fixe, donc elle se trouve dans geom_density(). 
 
 ### Exercise 3
 
 Boxplot:
 
 ```{r plastic-waste-boxplot}
-# insert code here
+ggplot(plastic_waste, aes(x = continent,
+                  y = plastic_waste_per_cap)) +
+  geom_boxplot() 
 ```
 
 Violin plot:
 
 ```{r plastic-waste-violin}
-# insert code here
+ggplot(plastic_waste, aes(x = continent,  y = plastic_waste_per_cap)) +
+         geom_violin()
 ```
 
-Réponse à la question...
+Un boxplot résume les données avec la médiane, les quartiles et les valeurs extrêmes, mais il ne montre pas comment les valeurs sont réparties à l’intérieur de la boîte. Le violin plot ajoute cette information en affichant la forme de la distribution : on peut voir si les données sont concentrées, dispersées, symétriques, etc. 
 
 ### Exercise 4
 
