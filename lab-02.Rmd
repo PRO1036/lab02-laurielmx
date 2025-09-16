@@ -36,8 +36,8 @@ ggplot(plastic_waste, aes(x = plastic_waste_per_cap )) +
 ### Exercise 2
 
 ```{r plastic-waste-density}
-ggplot(plastic_waste, aes(x = plastic_waste_per_cap, color = continent )) + 
-  geom_density(fill=NA)
+ggplot(plastic_waste, aes(x = plastic_waste_per_cap, color = continent, fill = continent )) + 
+  geom_density()
 ```
 
 Réponse à la question...
